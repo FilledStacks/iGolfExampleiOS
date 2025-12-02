@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E97362F52ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */; };
+		E97362F62ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E97362D62ED88CAD00B2A7CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,10 +28,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E97362F72ED88D0600B2A7CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E97362F62ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E97362BF2ED88CAB00B2A7CB /* CourseViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97362D52ED88CAD00B2A7CB /* CourseViewerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseViewerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97362DF2ED88CAD00B2A7CB /* CourseViewerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseViewerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IGolfViewer3D.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97362F52ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +113,7 @@
 				E97362D82ED88CAD00B2A7CB /* CourseViewerDemoTests */,
 				E97362E22ED88CAD00B2A7CB /* CourseViewerDemoUITests */,
 				E97362C02ED88CAB00B2A7CB /* Products */,
+				E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +137,7 @@
 				E97362BB2ED88CAB00B2A7CB /* Sources */,
 				E97362BC2ED88CAB00B2A7CB /* Frameworks */,
 				E97362BD2ED88CAB00B2A7CB /* Resources */,
+				E97362F72ED88D0600B2A7CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
