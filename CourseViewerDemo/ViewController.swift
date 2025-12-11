@@ -5,35 +5,45 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var renderView: CourseRenderView!
     
-    private var isRenderViewLoaded = false
+    private var isLoaded: Bool = false
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(true)
 
-        loadGolfCourse()
+        if !isLoaded {
+            loadGolfCourse()
+        }
     }
     
     
     private func loadGolfCourse() {
         
-        guard !isRenderViewLoaded else {
-            return
-        }
+        isLoaded = true
         
-        isRenderViewLoaded = true
+        let loadingView = UIActivityIndicatorView(style: .large)
+        loadingView.color = .orange
+        loadingView.startAnimating();
         
-        let loader = CourseRenderViewLoader(
+        let loader = CourseRenderViewLoader.init(
             applicationAPIKey: "gAil-pspH8q4PgM",
             applicationSecretKey: "CgkDhdiAZoocUWf135VlKc4BGd2xrq",
             idCourse: "fAwbKaonIp7Q")
         
-        let activityIndicatorView = UIActivityIndicatorView(style: .large)
+ 
+        loader.measurementSystem = .metric
+        loader.showCalloutOverlay = false
+        loader.drawCentralPathMarkers = false
+        loader.drawDogLegMarker = true
+        loader.areFrontBackMarkersDynamic = true
+        loader.rotateHoleOnLocationChanged = true
+        loader.autoAdvanceActive = true
+        loader.draw3DCentralLine = false
+        loader.setLoading(loadingView)
+        loader.initialNavigationMode = .modeFreeCam
+        loader.preload(completionHandler: { [weak self] in
+            self?.renderView.load(with: loader)
+        }, errorHandler: { [weak self] (error) in
         
-        loader.setLoading(activityIndicatorView)
-        loader.initialNavigationMode = .modeOverallHole
-        
-        renderView.load(with: loader)
-        
-        activityIndicatorView.startAnimating()
+        })
     }
 }

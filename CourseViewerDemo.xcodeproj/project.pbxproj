@@ -7,26 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E97362F52ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */; };
-		E97362F62ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E914C0582EEAFEE40000A9E9 /* IGolfViewer3D.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E914C0562EEAFED60000A9E9 /* IGolfViewer3D.xcframework */; };
+		E914C0592EEAFEE40000A9E9 /* IGolfViewer3D.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E914C0562EEAFED60000A9E9 /* IGolfViewer3D.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E97362D62ED88CAD00B2A7CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E97362B72ED88CAB00B2A7CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E97362BE2ED88CAB00B2A7CB;
-			remoteInfo = CourseViewerDemo;
-		};
-		E97362E02ED88CAD00B2A7CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E97362B72ED88CAB00B2A7CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E97362BE2ED88CAB00B2A7CB;
-			remoteInfo = CourseViewerDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E97362F72ED88D0600B2A7CB /* Embed Frameworks */ = {
@@ -35,7 +18,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E97362F62ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Embed Frameworks */,
+				E914C0592EEAFEE40000A9E9 /* IGolfViewer3D.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,10 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E97362BF2ED88CAB00B2A7CB /* CourseViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E97362D52ED88CAD00B2A7CB /* CourseViewerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseViewerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E97362DF2ED88CAD00B2A7CB /* CourseViewerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourseViewerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IGolfViewer3D.xcframework; sourceTree = "<group>"; };
+		E914C0562EEAFED60000A9E9 /* IGolfViewer3D.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IGolfViewer3D.xcframework; sourceTree = "<group>"; };
+		E9B0D74A2EE2F557004202A1 /* CourseViewerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseViewerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -68,16 +49,6 @@
 			path = CourseViewerDemo;
 			sourceTree = "<group>";
 		};
-		E97362D82ED88CAD00B2A7CB /* CourseViewerDemoTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CourseViewerDemoTests;
-			sourceTree = "<group>";
-		};
-		E97362E22ED88CAD00B2A7CB /* CourseViewerDemoUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CourseViewerDemoUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,21 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97362F52ED88D0600B2A7CB /* IGolfViewer3D.xcframework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97362D22ED88CAD00B2A7CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97362DC2ED88CAD00B2A7CB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E914C0582EEAFEE40000A9E9 /* IGolfViewer3D.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,21 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				E97362C12ED88CAB00B2A7CB /* CourseViewerDemo */,
-				E97362D82ED88CAD00B2A7CB /* CourseViewerDemoTests */,
-				E97362E22ED88CAD00B2A7CB /* CourseViewerDemoUITests */,
-				E97362C02ED88CAB00B2A7CB /* Products */,
-				E97362F32ED88CDB00B2A7CB /* IGolfViewer3D.xcframework */,
+				E9B0D74A2EE2F557004202A1 /* CourseViewerDemo.app */,
+				E914C0562EEAFED60000A9E9 /* IGolfViewer3D.xcframework */,
 			);
-			sourceTree = "<group>";
-		};
-		E97362C02ED88CAB00B2A7CB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E97362BF2ED88CAB00B2A7CB /* CourseViewerDemo.app */,
-				E97362D52ED88CAD00B2A7CB /* CourseViewerDemoTests.xctest */,
-				E97362DF2ED88CAD00B2A7CB /* CourseViewerDemoUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,54 +95,8 @@
 			packageProductDependencies = (
 			);
 			productName = CourseViewerDemo;
-			productReference = E97362BF2ED88CAB00B2A7CB /* CourseViewerDemo.app */;
+			productReference = E9B0D74A2EE2F557004202A1 /* CourseViewerDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		E97362D42ED88CAD00B2A7CB /* CourseViewerDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E97362ED2ED88CAD00B2A7CB /* Build configuration list for PBXNativeTarget "CourseViewerDemoTests" */;
-			buildPhases = (
-				E97362D12ED88CAD00B2A7CB /* Sources */,
-				E97362D22ED88CAD00B2A7CB /* Frameworks */,
-				E97362D32ED88CAD00B2A7CB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E97362D72ED88CAD00B2A7CB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E97362D82ED88CAD00B2A7CB /* CourseViewerDemoTests */,
-			);
-			name = CourseViewerDemoTests;
-			packageProductDependencies = (
-			);
-			productName = CourseViewerDemoTests;
-			productReference = E97362D52ED88CAD00B2A7CB /* CourseViewerDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E97362DE2ED88CAD00B2A7CB /* CourseViewerDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E97362F02ED88CAD00B2A7CB /* Build configuration list for PBXNativeTarget "CourseViewerDemoUITests" */;
-			buildPhases = (
-				E97362DB2ED88CAD00B2A7CB /* Sources */,
-				E97362DC2ED88CAD00B2A7CB /* Frameworks */,
-				E97362DD2ED88CAD00B2A7CB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E97362E12ED88CAD00B2A7CB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E97362E22ED88CAD00B2A7CB /* CourseViewerDemoUITests */,
-			);
-			name = CourseViewerDemoUITests;
-			packageProductDependencies = (
-			);
-			productName = CourseViewerDemoUITests;
-			productReference = E97362DF2ED88CAD00B2A7CB /* CourseViewerDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -212,14 +111,6 @@
 					E97362BE2ED88CAB00B2A7CB = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					E97362D42ED88CAD00B2A7CB = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = E97362BE2ED88CAB00B2A7CB;
-					};
-					E97362DE2ED88CAD00B2A7CB = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = E97362BE2ED88CAB00B2A7CB;
-					};
 				};
 			};
 			buildConfigurationList = E97362BA2ED88CAB00B2A7CB /* Build configuration list for PBXProject "CourseViewerDemo" */;
@@ -232,33 +123,17 @@
 			mainGroup = E97362B62ED88CAB00B2A7CB;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E97362C02ED88CAB00B2A7CB /* Products */;
+			productRefGroup = E97362B62ED88CAB00B2A7CB;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E97362BE2ED88CAB00B2A7CB /* CourseViewerDemo */,
-				E97362D42ED88CAD00B2A7CB /* CourseViewerDemoTests */,
-				E97362DE2ED88CAD00B2A7CB /* CourseViewerDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E97362BD2ED88CAB00B2A7CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97362D32ED88CAD00B2A7CB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97362DD2ED88CAD00B2A7CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,34 +150,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E97362D12ED88CAD00B2A7CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97362DB2ED88CAD00B2A7CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E97362D72ED88CAD00B2A7CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E97362BE2ED88CAB00B2A7CB /* CourseViewerDemo */;
-			targetProxy = E97362D62ED88CAD00B2A7CB /* PBXContainerItemProxy */;
-		};
-		E97362E12ED88CAD00B2A7CB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E97362BE2ED88CAB00B2A7CB /* CourseViewerDemo */;
-			targetProxy = E97362E02ED88CAD00B2A7CB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E97362E92ED88CAD00B2A7CB /* Debug */ = {
@@ -320,6 +168,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +197,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +250,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -464,6 +315,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -476,81 +328,10 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E97362EE2ED88CAD00B2A7CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U8V4343PBW;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.filledstacks.viewerDemo.CourseViewerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CourseViewerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CourseViewerDemo";
-			};
-			name = Debug;
-		};
-		E97362EF2ED88CAD00B2A7CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U8V4343PBW;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.filledstacks.viewerDemo.CourseViewerDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CourseViewerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CourseViewerDemo";
-			};
-			name = Release;
-		};
-		E97362F12ED88CAD00B2A7CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U8V4343PBW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.filledstacks.viewerDemo.CourseViewerDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CourseViewerDemo;
-			};
-			name = Debug;
-		};
-		E97362F22ED88CAD00B2A7CB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U8V4343PBW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.filledstacks.viewerDemo.CourseViewerDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CourseViewerDemo;
 			};
 			name = Release;
 		};
@@ -571,24 +352,6 @@
 			buildConfigurations = (
 				E97362E92ED88CAD00B2A7CB /* Debug */,
 				E97362EA2ED88CAD00B2A7CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E97362ED2ED88CAD00B2A7CB /* Build configuration list for PBXNativeTarget "CourseViewerDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E97362EE2ED88CAD00B2A7CB /* Debug */,
-				E97362EF2ED88CAD00B2A7CB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E97362F02ED88CAD00B2A7CB /* Build configuration list for PBXNativeTarget "CourseViewerDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E97362F12ED88CAD00B2A7CB /* Debug */,
-				E97362F22ED88CAD00B2A7CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
