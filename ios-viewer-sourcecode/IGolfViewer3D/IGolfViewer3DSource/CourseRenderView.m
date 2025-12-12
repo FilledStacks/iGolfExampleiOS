@@ -350,13 +350,14 @@ static CourseRenderView* _shared;
 }
 
 -(void)loadWithLoader:(CourseRenderViewLoader *)loader {
+    NSLog(@"🚀 [IGolfViewer3D] loadWithLoader called, isPreloaded: %@", loader.isPreloaded ? @"YES" : @"NO");
     _loader = loader;
     if (_loader.isPreloaded) {
-        
+        NSLog(@"✅ [IGolfViewer3D] Course is preloaded, launching immediately");
         [self launchWithLoader:_loader];
-        
+
     } else {
-        
+        NSLog(@"⏳ [IGolfViewer3D] Course not preloaded, starting preload...");
         _loadingView = loader.getLoadingView;
         
         if (_loadingView) {
@@ -365,11 +366,13 @@ static CourseRenderView* _shared;
         }
         
         [_loader preloadWithCompletionHandler:^{
+            NSLog(@"✅ [IGolfViewer3D] Preload completed successfully, launching course");
             if (_loadingView) {
                 [_loadingView removeFromSuperview];
             }
             [self launchWithLoader:_loader];
         } errorHandler:^(NSError * _Nullable error) {
+            NSLog(@"❌ [IGolfViewer3D] Preload FAILED with error: %@", error ? error.localizedDescription : @"nil error");
             if (_loadingView) {
                 [_loadingView removeFromSuperview];
             }
@@ -380,6 +383,7 @@ static CourseRenderView* _shared;
 }
 
 - (void)launchWithLoader:(CourseRenderViewLoader *)loader {
+    NSLog(@"🏌️ [IGolfViewer3D] launchWithLoader called, about to load course with ID: %@", loader.idCourse);
     [self setRenderViewWidthPercent:1];
     NSArray* holes = nil;
     if (loader.coursePinPositionDetailsResponse && [loader.coursePinPositionDetailsResponse objectForKey:@"holes"]) {

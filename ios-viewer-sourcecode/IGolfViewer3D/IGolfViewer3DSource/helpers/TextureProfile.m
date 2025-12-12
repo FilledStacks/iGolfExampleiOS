@@ -170,69 +170,143 @@
 }
 
 -(NSMutableArray<GLKTextureInfo*>*) getDeciduousTreeTextureSet {
-    
+
+    NSLog(@"🌳 [IGolfViewer3D] Loading deciduous tree texture set...");
+    NSLog(@"📍 [IGolfViewer3D] Main bundle path: %@", [[NSBundle mainBundle] bundlePath]);
+
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
+
     for (int i = 1; i <= 5; i++) {
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_tree_%d", i] ofType:@"png"]]];
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_tree_%d", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+
+        NSLog(@"🔎 [IGolfViewer3D] Looking for resource: %@.png", resourceName);
+        NSLog(@"🔎 [IGolfViewer3D] Path returned by bundle: %@", path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture for %@.png - would cause crash!", resourceName);
+        }
     }
-    
-    
-    
+
+    NSLog(@"🌳 [IGolfViewer3D] Loaded %lu/%d deciduous tree textures", (unsigned long)retval.count, 5);
+
     return retval;
 }
 
 -(NSMutableArray<GLKTextureInfo*>*) getDeciduousTreeShadowTextureSet {
-    
+
+    NSLog(@"🌲 [IGolfViewer3D] Loading deciduous tree shadow texture set...");
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
-    for (int i = 1; i <= 5; i++ )
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_tree_%d_shadow", i] ofType:@"png"]]];
-    
+
+    for (int i = 1; i <= 5; i++) {
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_tree_%d_shadow", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+        NSLog(@"🔎 [IGolfViewer3D] Looking for: %@.png -> %@", resourceName, path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture - would cause crash!");
+        }
+    }
+
+    NSLog(@"🌲 [IGolfViewer3D] Loaded %lu/%d shadow textures", (unsigned long)retval.count, 5);
     return retval;
 }
 
 
 
 -(NSMutableArray<GLKTextureInfo*>*) getDesertTreeTextureSet {
-    
+
+    NSLog(@"🏜️ [IGolfViewer3D] Loading desert tree texture set...");
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
-    for (int i = 1; i <= 4; i++)
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_tree_%d_desert", i] ofType:@"png"]]];
-    
+
+    for (int i = 1; i <= 4; i++) {
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_tree_%d_desert", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+        NSLog(@"🔎 [IGolfViewer3D] Looking for: %@.png -> %@", resourceName, path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture - would cause crash!");
+        }
+    }
+
+    NSLog(@"🏜️ [IGolfViewer3D] Loaded %lu/%d desert tree textures", (unsigned long)retval.count, 4);
     return retval;
 }
 
 -(NSMutableArray<GLKTextureInfo*>*) getDesertTreeShadowTextureSet {
-    
+
+    NSLog(@"🏜️ [IGolfViewer3D] Loading desert tree shadow texture set...");
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
-    for (int i = 1; i <= 4; i++)
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_tree_%d_shadow_desert", i] ofType:@"png"]]];
-    
+
+    for (int i = 1; i <= 4; i++) {
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_tree_%d_shadow_desert", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+        NSLog(@"🔎 [IGolfViewer3D] Looking for: %@.png -> %@", resourceName, path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture - would cause crash!");
+        }
+    }
+
+    NSLog(@"🏜️ [IGolfViewer3D] Loaded %lu/%d desert shadow textures", (unsigned long)retval.count, 4);
     return retval;
 }
 
 
 
 -(NSMutableArray<GLKTextureInfo*>*) _getEvergreenTreeTextureSet {
-    
+
+    NSLog(@"🌲 [IGolfViewer3D] Loading evergreen tree texture set...");
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
-    for (int i = 1; i <= 6; i++)
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_evergreen_tree_%d", i] ofType:@"png"]]];
-    
+
+    for (int i = 1; i <= 6; i++) {
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_evergreen_tree_%d", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+        NSLog(@"🔎 [IGolfViewer3D] Looking for: %@.png -> %@", resourceName, path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture - would cause crash!");
+        }
+    }
+
+    NSLog(@"🌲 [IGolfViewer3D] Loaded %lu/%d evergreen tree textures", (unsigned long)retval.count, 6);
     return retval;
 }
 
 -(NSMutableArray<GLKTextureInfo*>*) _getEvergreenTreeShadowTextureSet {
-    
+
+    NSLog(@"🌲 [IGolfViewer3D] Loading evergreen tree shadow texture set...");
     NSMutableArray<GLKTextureInfo*>* retval = [NSMutableArray new];
-    
-    for (int i = 1; i <= 6; i++)
-        [retval addObject:[GLKTextureInfo loadFromCacheWithFilePath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v3d_evergreen_tree_%d_shadow", i] ofType:@"png"]]];
-    
+
+    for (int i = 1; i <= 6; i++) {
+        NSString *resourceName = [NSString stringWithFormat:@"v3d_evergreen_tree_%d_shadow", i];
+        NSString *path = [[NSBundle mainBundle] pathForResource:resourceName ofType:@"png"];
+        NSLog(@"🔎 [IGolfViewer3D] Looking for: %@.png -> %@", resourceName, path ? path : @"(nil)");
+
+        GLKTextureInfo *texture = [GLKTextureInfo loadFromCacheWithFilePath:path];
+        if (texture != nil) {
+            [retval addObject:texture];
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] SKIPPING nil texture - would cause crash!");
+        }
+    }
+
+    NSLog(@"🌲 [IGolfViewer3D] Loaded %lu/%d evergreen shadow textures", (unsigned long)retval.count, 6);
     return retval;
 }
 

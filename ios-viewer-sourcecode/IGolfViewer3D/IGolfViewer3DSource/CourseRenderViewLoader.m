@@ -110,16 +110,22 @@
 }
 
 -(void)preloadWithCompletionHandler:(void (^)())completionHandler errorHandler:(void (^)(NSError * _Nullable error))errorHandler {
+    NSLog(@"🎯 [IGolfViewer3D] preloadWithCompletionHandler called for course: %@", _idCourse);
     __weak CourseRenderViewLoader* loader = self;
     NSString* idCourse = _idCourse.copy;
-    
+
     [loader loadCourseGPSVectorDetailsWithIdCourse:idCourse completionHandler:^(CourseGPSVectorDetailsResponse * _Nullable courseGPSVectorDetailsResponse) {
+        NSLog(@"✅ [IGolfViewer3D] GPS Vector Details loaded successfully");
+
         [loader setCourseGPSVectorDetailsResponse:courseGPSVectorDetailsResponse];
         [loader loadCourseGPSDetailsResponseWithIdCourse:idCourse completionHandler:^(CourseGPSDetailsResponse * _Nullable courseGPSDetailsResponse) {
+            NSLog(@"✅ [IGolfViewer3D] GPS Details loaded successfully");
             [loader setCourseGPSDetailsResponse:courseGPSDetailsResponse];
             [loader loadCourseScorecardDetailsResponseWithIdCourse:idCourse completionHandler:^(CourseScorecardDetailsResponse * _Nullable courseScorecardDetailsResponse) {
+                NSLog(@"✅ [IGolfViewer3D] Scorecard Details loaded successfully");
                 [loader setCourseScorecardDetailsResponse:courseScorecardDetailsResponse];
                 [loader loadCoursePinPositionDetailsResponseWithIdCourse:idCourse completionHandler:^(CoursePinPositionDetailsResponse * _Nullable coursePinPositionDetailsResponse) {
+                    NSLog(@"✅ [IGolfViewer3D] Pin Position Details loaded successfully");
                     [loader setCoursePinPositionsDetailsResponse:coursePinPositionDetailsResponse];
                     
                     BOOL useElevations = true;
@@ -129,22 +135,26 @@
                         completionHandler();
                     } else {
                         [loader loadCourseElevationDataDetailsResponseWithIdCourse:idCourse completionHandler:^(CourseElevationDataDetailsResponse * _Nullable courseElevationDataDetailsResponse) {
+                            NSLog(@"✅ [IGolfViewer3D] Elevation Data Details loaded successfully");
                             [loader setCourseElevationDataDetailsResponse:courseElevationDataDetailsResponse];
                             if (courseElevationDataDetailsResponse != nil) {
                                 [loader loadCourseElevationDataDetailsUrl:courseElevationDataDetailsResponse.jsonFullUrl completionHandler:^(NSDictionary * _Nullable data) {
                                     [loader setElevationData:data];
                                     
                                     NSError* error = [loader checkData];
-                                    
+
                                     if (error != nil) {
+                                        NSLog(@"❌ [IGolfViewer3D] ERROR: checkData failed: %@", error.localizedDescription);
                                         errorHandler(error);
                                         return;
                                     }
-                                    
+
+                                    NSLog(@"✅ [IGolfViewer3D] All course data loaded successfully, calling completionHandler");
                                     [loader setIsPreloaded:true];
-                                    
+
                                     completionHandler();
                                 } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
+                                    NSLog(@"❌ [IGolfViewer3D] ERROR loading Elevation Data URL: %@", error.localizedDescription ?: @"Unknown error");
                                     [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
                                 }];
                             } else {
@@ -161,19 +171,24 @@
                                 completionHandler();
                             }
                         } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
+                            NSLog(@"❌ [IGolfViewer3D] ERROR in Elevation Data Details: %@", error.localizedDescription ?: @"Unknown error");
                             [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
                         }];
                     }
                 } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
-                     [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
+                    NSLog(@"❌ [IGolfViewer3D] ERROR in Pin Position Details: %@", error.localizedDescription ?: @"Unknown error");
+                    [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
                 }];
             } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
+                NSLog(@"❌ [IGolfViewer3D] ERROR in Scorecard Details: %@", error.localizedDescription ?: @"Unknown error");
                 [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
             }];
         } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
+            NSLog(@"❌ [IGolfViewer3D] ERROR in GPS Details: %@", error.localizedDescription ?: @"Unknown error");
             [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
         }];
     } errorHandler:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
+        NSLog(@"❌ [IGolfViewer3D] ERROR in GPS Vector Details: %@", error.localizedDescription ?: @"Unknown error");
         [loader processErrorResponse:errorResponse error:error withHandler:errorHandler];
     }];
 }
@@ -244,10 +259,13 @@
     [_rest coursePinPositionDetails:idCourse success:^(CoursePinPositionDetailsResponse * _Nullable response) {
         completionHandler(response);
     } failed:^(DefaultResponse * _Nullable errorResponse, NSError * _Nullable error) {
-        if (errorResponse.status.integerValue != 501) {
-            errorHandler(errorResponse, error);
-        } else {
+        NSLog(@"⚠️ [IGolfViewer3D] Pin Position API returned status: %@ (error: %@)", errorResponse.status, error.localizedDescription ?: @"nil");
+        if (errorResponse.status.integerValue == 501 || errorResponse.status.integerValue == 206) {
+            NSLog(@"✅ [IGolfViewer3D] Pin Position status is %@ (allowed), continuing without pin positions", errorResponse.status);
             completionHandler(nil);
+        } else {
+            NSLog(@"❌ [IGolfViewer3D] Pin Position status is %@, treating as error", errorResponse.status);
+            errorHandler(errorResponse, error);
         }
     }];
 }
